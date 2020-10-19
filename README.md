@@ -19,7 +19,7 @@
 
 ## Overview
 
-_**PostVille** is a hybrid twitter/reddit blogging app. Users can post their thoughts along with repost, favorite, and comment on each others postings. 
+**PostVille** is a hybrid twitter/reddit blogging app. Users can post their thoughts along with repost, favorite, and comment on each others postings. 
 
 
 <br>
