@@ -72,9 +72,9 @@ Sign Up
 
 Post
 https://app.moqups.com/ReDtrAhgKU/edit/page/a2071f80a
-
+![post](https://i.imgur.com/ewjTtEN.png)
 Edit Post
-https://app.moqups.com/ReDtrAhgKU/edit/page/a796107b7
+![edit](https://i.imgur.com/IPdUI4W.png)
 
 #### Component Tree
 
