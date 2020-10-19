@@ -55,7 +55,7 @@ PostVille's MVP includes
 |  Styled Components| _Library that keeps styling and element architecture separated and make components more readable_ |         
 | Ruby on Rails | _Framework for building back ends with Ruby_         
 |   Axios            | Requests to external resources_ 
-|    bcrypt     | _Library used for hashing passwords_                      |
+|    Bcrypt     | _Library used for hashing passwords_                      |
 |      JWT      | _Library used for creating tokens_                        |
 
 <br>
