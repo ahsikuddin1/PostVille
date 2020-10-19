@@ -19,40 +19,44 @@
 
 ## Overview
 
-_**Project Title** is lorem ipsum dolor sit amet. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+_**PostVille** is a hybrid twitter/reddit blogging app. Users can post their thoughts along with repost, favorite, and comment on each others postings. 
 
 
 <br>
 
 ## MVP
 
-> The Minimum Viable Product should be a well-planned, easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
+PostVille's MVP includes
+- A functioning server with SQL tables for Users, User Posts, and User Comments.
+- Enabling users to sign up and login
+- User Authentication
+- Users being able to like and comment on posts
+- Users being able to CRUD (Create, read, update and delete) posts
 
-_The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
 
 <br>
 
 ### Goals
-
-- _Lorem ipsum, dolor sit amet,_
-- _consectetur adipiscing elit._
-- _Phasellus dapibus fermentum risus vitae bibendum._
-- _Integer vel ipsum mollis odio sollicitudin ornare eu vel ex._
-- _etc._
+- Create a interactive and dynamic engaging application.
+- Full CRUD functionality
+- Utilize Ruby & Ruby on Rails for Server side rendering & React for client.
+- Authorization for the user to Login.
 
 <br>
 
 ### Libraries and Dependencies
 
-> Use this section to list all supporting libraries and dependencies, and their role in the project. Below is an example - this needs to be replaced!
 
-|     Library      | Description                                |
-| :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+
+|    Library    | Description                                          |
+| :-----------: | :--------------------------------------------------- |
+|     React     | _Library for building front end interfaces with JSX_ |
+| React Router  | _Used to create route changes in React apps_ |
+|  Styled Components| _Library that keeps styling and element architecture separated and make components more readable_ |         
+| Ruby on Rails | _Framework for building back ends with Ruby_         
+|   Axios            | Requests to external resources_ 
+|    bcrypt     | _Library used for hashing passwords_                      |
+|      JWT      | _Library used for creating tokens_                        |
 
 <br>
 
@@ -79,49 +83,32 @@ Post
 ![post](https://i.imgur.com/ewjTtEN.png)
 
 Edit Post
-![edit](https://i.imgur.com/IPdUI4W.png)
+![edit](https://i.imgur.com/14r4twU.png)
 
 #### Component Tree
 
-> Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. 
+
 
 ![whimsical](https://i.imgur.com/rBNkXw0.png[/img)
 
 #### Component Hierarchy
 
-> Use this section to define your React components and the data architecture of your app. This should be a reflection of how you expect your directory/file tree to look like. 
+
 
 ``` structure
 
 src
-|__ services/
-      |__ apiConfig.js
-      |__ auth.js
-      |__ users.js
-      |__ posts.js
 |__ components/
-      |__ nav/
-            |__ nav.component.jsx
-            |__ nav.styles.scss
-         |__ Footer/
-            |__ footer.component.jsx
-            |__ footer.styles.scss
-      |__ blog/
-            |__ blog.component.jsx
-            |__ blog.styles.scss
+            |__ Nav.jsx
+            |__ Footer.jsx
+            |_ SortBy.jsx
 |__ screens/
-      |__ homepage/
-            |__ homepage.component.jsx
-            |__ homepage.styles.scss
-      |__ signin/
-            |__ signin.component.jsx
-            |__ signin.styles.scss
-      |__ signup/
-            |__ signup.component.jsx
-            |__ signup.styles.scss
-      |__ posts/
-            |__ posts.component.jsx
-            |__ posts.styles.scss
+            |__ Home.jsx
+            |__ SearchBar.jsx
+            |__ Login.jsx
+            |__ Signup.jsx
+            |__ Blogs.jsx
+   
 
 ```
 
@@ -131,23 +118,27 @@ src
 
 |  Component   |    Type    | state | props | Description                                                      |
 | :----------: | :--------: | :---: | :---: | :--------------------------------------------------------------- |
-|    Header    | functional |   n   |   n   | _The header will contain the navigation and logo._               |
-|  Navigation  | functional |   n   |   n   | _The navigation will provide a link to each of the pages._       |
-|   Gallery    |   class    |   y   |   n   | _The gallery will render the posts using cards in flexbox._      |
-| Gallery Card | functional |   n   |   y   | _The cards will render the post info via props._                 |
-|    Footer    | functional |   n   |   n   | _The footer will show info about me and a link to my portfolio._ |
+|  Navigation  | functional |   Y  |   n   | _User will be provided links to each of the pages._       |
+|  Home Page   |   functional |   Y   |   n   | The homepage will display the posts as well as the searchbar._      |
+| Searchbar | functional |   Y  |   Y  | _The user will be able to search posts._                 |
+| Sort By | functional |   Y  |   n  | _The user will be able to sort posts by date or by name._                 |
+| Blogs | functional |   Y  |   Y  | _The user will be able to create posts or blogs._                 |
+| Login | functional |   Y  |   Y  | _The user will be able to login._                 |
+| Sign Up | functional |   Y  |   Y  | _The user will be able to sign up for an account._                 |
+| Footer | functional |   Y  |   n  | _The footer will show info about me and a link to my portfolio._ |
 
 #### Time Estimates
 
 > Use this section to estimate the time necessary to build out each of the components you've described above.
 
-| Task                | Priority | Estimated Time | Time Invested | Actual Time |
-| ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
+| Task      | Priority | Estimated Time | Time Invested | Actual Time |
+| --------- | :------: | :------------: | :-----------: | :---------: |
+| CSS       |    H     |     20 hrs     |   TBD    |   TBD    |
+| Front End |    VH    |     35 hrs     |    TBD    |   TBD  |
+| Back End  |    H     |     10 hrs     |     TBD    |    TBD    |
+| TOTAL     |          |     60 hrs     |   TBD    |   TBD |
 
-> _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
+
 
 <br>
 
@@ -161,15 +152,17 @@ src
 ***
 
 ## Post-MVP
-
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
+- Create a dark mode
+- Implement Css animations
+- Implement profanity filtering
+- Allow users to post videos and pictures
 
 ***
 
 ## Code Showcase
 
-> Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
+
 
 ## Code Issues & Resolutions
 
-> Use this section to list of all major issues encountered and their resolution.
+
