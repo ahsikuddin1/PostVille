@@ -60,15 +60,15 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 
 #### Wireframes
 Home
-https://app.moqups.com/ReDtrAhgKU/edit/page/ab18d409a
-![home](https://i.imgur.com/sqqcu2X.png)
-Login
-https://app.moqups.com/ReDtrAhgKU/edit/page/ae5715c56
+![home](https://imgur.com/BekqmDO.png)
 
+Login
+
+![login](https://i.imgur.com/O2mnzVs.png)
 
 
 Sign Up
-https://app.moqups.com/ReDtrAhgKU/edit/page/a8eda0d9e
+![signup](https://i.imgur.com/Nl8wrtu.png)
 
 Post
 https://app.moqups.com/ReDtrAhgKU/edit/page/a2071f80a
