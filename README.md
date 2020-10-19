@@ -92,14 +92,34 @@ Edit Post
 ``` structure
 
 src
-|__ assets/
-      |__ fonts
-      |__ graphics
-      |__ images
-      |__ mockups
-|__ components/
-      |__ Header.jsx
 |__ services/
+      |__ apiConfig.js
+      |__ auth.js
+      |__ users.js
+      |__ posts.js
+|__ components/
+      |__ nav/
+            |__ nav.component.jsx
+            |__ nav.styles.scss
+         |__ Footer/
+            |__ footer.component.jsx
+            |__ footer.styles.scss
+      |__ blog/
+            |__ blog.component.jsx
+            |__ blog.styles.scss
+|__ screens/
+      |__ homepage/
+            |__ homepage.component.jsx
+            |__ homepage.styles.scss
+      |__ signin/
+            |__ signin.component.jsx
+            |__ signin.styles.scss
+      |__ signup/
+            |__ signup.component.jsx
+            |__ signup.styles.scss
+      |__ posts/
+            |__ posts.component.jsx
+            |__ posts.styles.scss
 
 ```
 
