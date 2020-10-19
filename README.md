@@ -83,7 +83,7 @@ Post
 ![post](https://i.imgur.com/ewjTtEN.png)
 
 Edit Post
-![edit](https://i.imgur.com/14r4twU.png)
+![edit](https://i.imgur.com/FRCgWmq.png)
 
 #### Component Tree
 
