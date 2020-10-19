@@ -5,11 +5,14 @@ class CommentsController < ApplicationController
   # GET /comments.json
   def index
     @comments = Comment.all
+
+    render json: @comments, include: [:post, :user]
   end
 
   # GET /comments/1
   # GET /comments/1.json
   def show
+    render json: @comments, include: [:post, :user]
   end
 
   # GET /comments/new
@@ -69,6 +72,6 @@ class CommentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:post, :user, :content)
+      params.require(:comment).permit(:post_id, :user_id, :content, :username, :name)
     end
 end
