@@ -62,17 +62,25 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 Home
 ![home](https://imgur.com/BekqmDO.png)
 
+
+
 Login
 
 ![login](https://i.imgur.com/O2mnzVs.png)
 
 
+
+
 Sign Up
 ![signup](https://i.imgur.com/Nl8wrtu.png)
+
+
 
 Post
 https://app.moqups.com/ReDtrAhgKU/edit/page/a2071f80a
 ![post](https://i.imgur.com/ewjTtEN.png)
+
+
 Edit Post
 ![edit](https://i.imgur.com/IPdUI4W.png)
 
