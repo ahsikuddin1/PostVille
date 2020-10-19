@@ -62,24 +62,21 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 Home
 ![home](https://imgur.com/BekqmDO.png)
 
-
+<br>
 
 Login
 
 ![login](https://i.imgur.com/O2mnzVs.png)
 
-
-
+<br>
 
 Sign Up
 ![signup](https://i.imgur.com/Nl8wrtu.png)
 
-
+<br>
 
 Post
-https://app.moqups.com/ReDtrAhgKU/edit/page/a2071f80a
 ![post](https://i.imgur.com/ewjTtEN.png)
-
 
 Edit Post
 ![edit](https://i.imgur.com/IPdUI4W.png)
@@ -138,7 +135,7 @@ src
 
 > Use this section to display an image of a computer generated ERD model. You can use draw.io, Lucidchart or another ERD tool.
 
-<br>
+
 
 ***
 
