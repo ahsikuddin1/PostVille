@@ -59,8 +59,21 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 ### Client (Front End)
 
 #### Wireframes
-
+Home
 https://app.moqups.com/ReDtrAhgKU/edit/page/ab18d409a
+
+Login
+https://app.moqups.com/ReDtrAhgKU/edit/page/ae5715c56
+
+Sign Up
+https://app.moqups.com/ReDtrAhgKU/edit/page/a8eda0d9e
+
+Post
+https://app.moqups.com/ReDtrAhgKU/edit/page/a2071f80a
+
+Edit Post
+https://app.moqups.com/ReDtrAhgKU/edit/page/a796107b7
+
 #### Component Tree
 
 > Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. 
