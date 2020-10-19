@@ -15,7 +15,7 @@ Post.destroy_all
 puts "#{User.count} users created"
 
 @content = 
-Post.create!(@user, content:'Im on a journey to become a full stack dev.')
+Post.create!(content:'Im on a journey to become a full stack dev.', user: @user)
 # Post.create!(user:'Ashik', content:'Hmm, what to order on UberEats today?')
 # Post.create!(user:'Moe', content:'Great day at the bank. Opened ten business accounts!!!')
 # Post.create!(user:'Sasha', content:'Sephora has some great deals!')
