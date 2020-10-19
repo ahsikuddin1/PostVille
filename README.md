@@ -85,6 +85,8 @@ Edit Post
 
 > Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. 
 
+![whimsical](https://i.imgur.com/rBNkXw0.png[/img)
+
 #### Component Hierarchy
 
 > Use this section to define your React components and the data architecture of your app. This should be a reflection of how you expect your directory/file tree to look like. 
