@@ -118,14 +118,14 @@ src
 
 |  Component   |    Type    | state | props | Description                                                      |
 | :----------: | :--------: | :---: | :---: | :--------------------------------------------------------------- |
-|  Navigation  | functional |   Y  |   n   | _User will be provided links to each of the pages._       |
-|  Home Page   |   functional |   Y   |   n   | The homepage will display the posts as well as the searchbar._      |
+|  Navigation  | functional |   Y  |   N   | _User will be provided links to each of the pages._       |
+|  Home Page   |   functional |   Y   |   N   | The homepage will display the posts as well as the searchbar._      |
 | Searchbar | functional |   Y  |   Y  | _The user will be able to search posts._                 |
-| Sort By | functional |   Y  |   n  | _The user will be able to sort posts by date or by name._                 |
+| Sort By | functional |   Y  |   N  | _The user will be able to sort posts by date or by name._                 |
 | Blogs | functional |   Y  |   Y  | _The user will be able to create posts or blogs._                 |
 | Login | functional |   Y  |   Y  | _The user will be able to login._                 |
 | Sign Up | functional |   Y  |   Y  | _The user will be able to sign up for an account._                 |
-| Footer | functional |   Y  |   n  | _The footer will show info about me and a link to my portfolio._ |
+| Footer | functional |   Y  |   N  | _The footer will display my name and links to my portfolio._ |
 
 #### Time Estimates
 
