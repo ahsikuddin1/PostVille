@@ -23,7 +23,7 @@ export default function Register(props) {
       e.preventDefault();
       handleRegister(formData);
     }}>
-      <h3>Register</h3>
+      <h3>Signup</h3>
       {
         error &&
         <p>{error}</p>
@@ -55,7 +55,7 @@ export default function Register(props) {
           onChange={handleChange}
         />
       </label>
-      <button>Register</button>
+      <button>Sign Up</button>
     </form>
   )
 }

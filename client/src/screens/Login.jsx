@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 export default function Login(props) {
   const [formData, setFormData] = useState({
@@ -46,8 +46,10 @@ export default function Login(props) {
           onChange={handleChange}
         />
       </label>
-      <Link to='/register'>Register</Link>
+      
       <button>Login</button>
+      <h3>Don't have an account?</h3>
+      <Link to='/register'>Sign Up!</Link>
     </form>
   )
 }
