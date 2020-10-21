@@ -8,7 +8,7 @@ export default function Posts(props) {
       <h3>Posts</h3>
       
       {
-        posts.map(post => (
+        Posts.map(post => (
           <div key={post.id}>
             <Link to={`/posts/${post.id}`}><p>{post.name}</p></Link>
             <Link to={`/posts/${post.id}/edit`}><button>Edit</button></Link>

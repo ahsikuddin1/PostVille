@@ -10,7 +10,7 @@ export const getOnePost = async (id) => {
   return resp.data;
 }
 
-export const postPost = async (foodData) => {
+export const postPost = async (postData) => {
   const resp = await api.post('/posts', {post: postData});
   return resp.data;
 }
@@ -25,7 +25,7 @@ export const destroyPost = async (id) => {
   return resp;
 }
 
-export const addComment = async(PosId, commentId) => {
-  const resp = await api.put(`/comments/${commentId}/posts/${postId}`);
-  return resp.data;
-}
+// export const addComment = async(PosId, commentId) => {
+//   const resp = await api.put(`/comments/${commentId}/posts/${postId}`);
+//   return resp.data;
+// }

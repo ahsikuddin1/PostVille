@@ -5,6 +5,7 @@ import Login from './screens/Login';
 import Register from './screens/Register';
 import { loginUser, registerUser, removeToken, verifyUser } from './services/auth';
 import { Route, useHistory, Switch } from 'react-router-dom';
+import MainContainer from './containers/MainContainer';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
   }, [])
 
   const handleLogin = async (loginData) => {
+    console.log(loginData)
     const userData = await loginUser(loginData);
     setCurrentUser(userData);
     history.push('/')
@@ -47,7 +49,10 @@ function App() {
           </Route>
           <Route path='/register'>
             <Register handleRegister={handleRegister} />
-          </Route>
+        </Route>
+        <Route path='/'>
+          <MainContainer />
+        </Route>
         </Switch>
   
       </Layout>

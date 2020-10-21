@@ -25,8 +25,7 @@ export default function Header(props) {
       {
         currentUser &&
         <>
-          {/* <Link to='/foods'>Foods</Link>
-          <Link to='/flavors'>Flavors</Link> */}
+          <Link to='/posts'>Posts</Link>
         </>
       }
     </div>
