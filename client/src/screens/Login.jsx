@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import styled from "styled-components";
+
+const MainContainer = styled.div`
+  display: flex;
+`;
+
+
 
 export default function Login(props) {
   const [formData, setFormData] = useState({
@@ -19,6 +26,7 @@ export default function Login(props) {
   }
 
   return (
+    <MainContainer>
     <form onSubmit={(e) => {
       e.preventDefault();
       handleLogin(formData);
@@ -51,5 +59,6 @@ export default function Login(props) {
       <h3>Don't have an account?</h3>
       <Link to='/register'>Sign Up!</Link>
     </form>
+    </MainContainer>
   )
 }

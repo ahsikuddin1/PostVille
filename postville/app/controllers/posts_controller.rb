@@ -5,13 +5,13 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
-    render json: @posts, include: :comments
+    render json: @posts, include: [:comments, :user]
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
-    render json: @posts, include: :comments
+    render json: @posts, include: [:comments, :user]
   end
 
   # GET /posts/new
@@ -57,10 +57,6 @@ class PostsController < ApplicationController
   # DELETE /posts/1.json
   def destroy
     @post.destroy
-    respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   private
