@@ -8,6 +8,7 @@
 
 User.destroy_all
 Post.destroy_all
+Comment.destroy_all
 
 
 @user = User.create!(username: 'Ashik', email: 'admin@gmail.com', password:'123456')
@@ -22,3 +23,6 @@ Post.create!(content:'Every time I shoot a basketball, I yell Kobe!!!!', user: @
 # Post.create!(user:'Sasha', content:'Sephora has some great deals!')
 puts "#{Post.count} Posts created"
 
+@comment = 
+Comment.create!(content:'I have to put in a lot of hardwork!', post_id:1, user_id:1)
+puts "#{Comment.count} Comments created"

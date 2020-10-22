@@ -6,9 +6,14 @@ export default function Comments(props) {
     <div>
       <h3>Comments</h3>
       {
-        comments.map(comment => (
-          <p key={comment.id}>{comment.name}</p>
-        ))
+        comments.map(comment => {
+          return (
+            <div key={comment.id} >
+              <p> {comment.content}</p>
+            
+            </div>
+          )
+        })
       }
     </div>
   )

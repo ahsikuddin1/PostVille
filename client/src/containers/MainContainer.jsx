@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getAllPosts, postPost, putPost } from "../services/posts";
+import { getComments } from '../services/comments.js'
 import { Route, Switch, useHistory } from "react-router-dom";
 import Posts from "../screens/Posts";
 
@@ -8,6 +9,7 @@ import PostEdit from "../screens/PostEdit";
 
 export default function MainContainer() {
   const [posts, setPosts] = useState([]);
+  const [comments, setComments] = useState([]);
   const history = useHistory();
 
   useEffect(() => {
@@ -16,6 +18,7 @@ export default function MainContainer() {
       setPosts(postsData);
     };
     fetchPosts();
+    fetchComments();
   }, []);
   const handlePostCreate = async (postData) => {
     const newPost = await postPost(postData);
@@ -29,6 +32,10 @@ export default function MainContainer() {
     })))
     history.push("/posts");
   };
+  const fetchComments = async () => {
+    const commentsData = await getComments() 
+    setComments(commentsData)
+  }
   // const handlePostDelete = async (id) => {
   
   //   setPosts(prevState => prevState.filter(post => post.id !== parseInt(id))
@@ -42,7 +49,7 @@ export default function MainContainer() {
         <PostEdit posts={posts} handlePostEdit={handlePostEdit}/>
       </Route>
       <Route path="/posts">
-        <Posts posts={posts} />
+        <Posts posts={posts} comments={comments}/>
       </Route>
     </Switch>
   );
