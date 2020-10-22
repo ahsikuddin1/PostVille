@@ -15,6 +15,7 @@ export default function Posts(props) {
             <Link to={`/posts/${post.id}`}><p>{post.name}</p></Link>
             <Link to={`/posts/${post.id}/edit`}><button>Edit</button></Link>
             <button>Delete</button>
+            <button>Comment</button>
           </div>
         ))
       }

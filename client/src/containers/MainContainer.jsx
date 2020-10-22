@@ -28,6 +28,8 @@ export default function MainContainer() {
     })))
     history.push("/posts");
   };
+  // const handlePostDelete = async (id) => {
+  //   setPosts(prevState => prevState.filter(post => post.id !== parseInt(id))
 
   return (
     <Switch>

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
+  
 
   # GET /users
   # GET /users.json
@@ -38,7 +39,7 @@ class UsersController < ApplicationController
       render json: @user.errors, status: :unprocessable_entity
     end
   end
-  
+
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
