@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getAllPosts, postPost, putPost } from "../services/posts";
 import { Route, Switch, useHistory } from "react-router-dom";
 import Posts from "../screens/Posts";
+
 import PostCreate from "../screens/PostCreate";
 import PostEdit from "../screens/PostEdit";
 
@@ -29,6 +30,7 @@ export default function MainContainer() {
     history.push("/posts");
   };
   // const handlePostDelete = async (id) => {
+  
   //   setPosts(prevState => prevState.filter(post => post.id !== parseInt(id))
 
   return (
