@@ -17,7 +17,7 @@ const NavBar = styled.nav`
 const NavOptionContainers = styled.div`
   display: flex;
   align-items: center;
-  flex-grow: 1;
+  // flex-grow: 1;
 
   @media (max-width: 800px) {
     margin: 0px 5px;
@@ -30,7 +30,7 @@ const NavOptionContainers = styled.div`
 `
 const NavOptions = styled.p`
   font-size: 24px;
-  margin: 0px 50px;
+  margin: 0px px;
   text-decoration: none;
   color: black;
   font-weight: 600;
@@ -59,9 +59,7 @@ export default function Header(props) {
           
             <Link to='/register'>Sign Up </Link>
             
-        <>
-          <Link to='/posts'>Posts</Link>
-        </>
+        
         </>
       }
      

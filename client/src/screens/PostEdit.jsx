@@ -36,7 +36,7 @@ export default function PostEdit(props) {
       e.preventDefault();
       handlePostEdit(id, formData);
     }}>
-      <h3>Edit Post</h3>
+      <h3><strong>Edit Post</strong></h3>
       <label>
         New Post:
         <input
