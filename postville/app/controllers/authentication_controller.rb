@@ -3,9 +3,8 @@ class AuthenticationController < ApplicationController
 
   # POST /auth/login
   def login
-    print "HELLLLER"
     @user = User.find_by(username: login_params[:username])
-    print 'HELOOOOi'
+
     print @user
     if @user.authenticate(login_params[:password]) #authenticate method provided by Bcrypt and 'has_secure_password'
       pp @user
