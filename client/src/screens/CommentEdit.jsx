@@ -1,32 +1,32 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-export default function PostEdit(props) {
+export default function CommentEdit(props) {
   const [formData, setFormData] = useState({
     content: "",
   });
-  const { handlePostEdit, posts } = props;
+  const { handleCommentEdit, comments } = props;
  
   const { id } = useParams();
 
   // Edit is almost identical to create but we prefill the formData
   useEffect(() => {
     const prefillFormData = () => {
-      // We already have the post info that we need in our list of posts
+      // We already have the comment info that we need in our list of posts
       // we can use ".find" to select the single post from the list by its id
-      const { content } = posts.find((post) => post.id === Number(id));
+      const { content } = comments.find((comment) => comment.id === Number(id));
       // const { commentsContent } = comments.find((comment)) => comment.id === Number(id));
       setFormData({ content });
     };
     // in react, child component will finish loading before the parents
-    // as a result, this component will render before the have our posts list
-    // we conditionally run "prefillFormData" based on if there are posts in our list
-    if (posts.length) {
+    // as a result, this component will render before the have our comments list
+    // we conditionally run "prefillFormData" based on if there are comments in our list
+    if (comments.length) {
       prefillFormData();
     }
     // additionally we put "posts" in our array to watch for changes
     // when "posts" updates, we will rerun our "useEffect" function
-  }, [posts, id]);
+  }, [comments, id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,14 +37,14 @@ export default function PostEdit(props) {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        handlePostEdit(id, formData);
+        handleCommentEdit(id, formData);
       }}
     >
       <h3>
-        <strong>Edit Post</strong>
+        <strong>Edit Comment</strong>
       </h3>
       <label>
-        New Post:
+        New Comment:
         <input
           type="text"
           name="content"

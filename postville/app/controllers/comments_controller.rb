@@ -27,10 +27,12 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
+    @post = Post.find(params[:post_id])
     @comment = Comment.new(comment_params)
     @comment.user = @current_user
+    @comment.post = @post
     if @comment.save
-      render json: @comment, include: [:post, :user], status: :created
+      render json: @post, include: [:user, comments: {include: :user}],status: :created
     else
       render json: @comment.errors, status: :unprocessable_entity
     end     
@@ -42,7 +44,8 @@ class CommentsController < ApplicationController
   # PATCH/PUT /comments/1.json
   def update
     if @comment.update(comment_params)
-      render json: @comment, include: [:post, :user]
+      @post = @comment.post
+      render json: @post, include: [:user, comments: {include: :user}]
     else
       render json: @comment.errors, status: :unprocessable_entity
     end

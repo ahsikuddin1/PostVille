@@ -26,14 +26,10 @@ const ProductDetailContainer = styled.div`
 `;
 
 export default function Posts(props) {
-  const { posts, comments} = props;
+  const { posts, comments, handlePostDelete } = props;
   const { id } = useParams()
   
-  const deletePost = async (id) => {
-    const destroy = await destroyPost(id)
-    console.log(destroy)
-    window.location.reload(`/posts`)
-  }
+  
 
  
 
@@ -45,18 +41,20 @@ export default function Posts(props) {
       {posts.map((post) => (
         <ProductDetailContainer key={post.id}>
           <p>
-            <strong>{post.user.username} </strong>
-          </p>
-          <p>{post.content}</p>
-          <Comments comments={comments} />
+            <strong>{post.user.username} </strong>:
+          {post.content}</p>
+          
           <Link to={`/posts/${post.id}`}>
             <p>{post.name}</p>
           </Link>
           <Link to={`/posts/${post.id}/edit`}>
             <button>Edit</button>
           </Link>
-          <button onClick={() => deletePost(post.id)} >Delete</button>
-          <button >Comment</button>
+          <button onClick={()=>handlePostDelete(post.id)}>Delete</button>
+          <Comments comments={post.comments} />
+          <Link to={`/posts/${post.id}/comments/new`} >
+          <button>Comment</button>
+          </Link>
         </ProductDetailContainer>
       ))}
       <Link to="/posts/new">

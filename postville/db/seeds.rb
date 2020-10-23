@@ -22,9 +22,10 @@ Post.create!(content:'Im on a journey to become a full stack dev.', user: @user)
 @content2 =
 Post.create!(content:'Hmm.. What to order on uber eats tonight?', user: @user2)
 @content3 =
-# Post.create!(content:'Every time I shoot a basketball, I yell Kobe!!!!', user: @user2)
+Post.create!(content:'Every time I shoot a basketball, I yell Kobe!!!!', user: @user2)
 puts "#{Post.count} Posts created"
 
 @comment = 
-Comment.create!(content:'You have to put in a lot of hardwork but you got this!', post_id:1, user_id:2)
+Comment.create!(content:'You have to put in a lot of hardwork but you got this!', post:@content, user:@user2)
+Comment.create!(content:'Get Ihop?', post:@content2, user:@user)
 puts "#{Comment.count} Comments created"
