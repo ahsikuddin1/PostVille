@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getAllPosts, postPost, putPost } from "../services/posts";
-import { getComments } from '../services/comments.js'
+import { getComments } from "../services/comments.js";
 import { Route, Switch, useHistory } from "react-router-dom";
 import Posts from "../screens/Posts";
 
@@ -25,19 +25,21 @@ export default function MainContainer() {
     setPosts((prevState) => [...prevState, newPost]);
     history.push("/posts");
   };
-  const handlePostEdit = async (id,postData) => {
-    const newPost = await putPost(id,postData);
-    setPosts((prevState) => (prevState.map(post => {
-      return post.id === parseInt(id) ? newPost : post
-    })))
+  const handlePostEdit = async (id, postData) => {
+    const newPost = await putPost(id, postData);
+    setPosts((prevState) =>
+      prevState.map((post) => {
+        return post.id === parseInt(id) ? newPost : post;
+      })
+    );
     history.push("/posts");
   };
   const fetchComments = async () => {
-    const commentsData = await getComments() 
-    setComments(commentsData)
-  }
+    const commentsData = await getComments();
+    setComments(commentsData);
+  };
   // const handlePostDelete = async (id) => {
-  
+
   //   setPosts(prevState => prevState.filter(post => post.id !== parseInt(id))
 
   return (
@@ -46,10 +48,10 @@ export default function MainContainer() {
         <PostCreate handlePostCreate={handlePostCreate} />
       </Route>
       <Route path="/posts/:id/edit">
-        <PostEdit posts={posts} handlePostEdit={handlePostEdit}/>
+        <PostEdit posts={posts} handlePostEdit={handlePostEdit} />
       </Route>
       <Route path="/posts">
-        <Posts posts={posts} comments={comments}/>
+        <Posts posts={posts} comments={comments} />
       </Route>
     </Switch>
   );

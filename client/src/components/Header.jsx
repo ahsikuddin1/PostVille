@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const NavBar = styled.nav`
@@ -13,7 +13,7 @@ const NavBar = styled.nav`
     display: flex;
     flex-direction: column;
   }
-`
+`;
 const NavOptionContainers = styled.div`
   display: flex;
   align-items: center;
@@ -27,7 +27,7 @@ const NavOptionContainers = styled.div`
     display: flex;
     flex-direction: column;
   }
-`
+`;
 const NavOptions = styled.p`
   font-size: 24px;
   margin: 0px px;
@@ -46,7 +46,7 @@ const NavOptions = styled.p`
   @media (max-width: 480px) {
     margin: 10px;
   }
-`
+`;
 export default function Header(props) {
   const { currentUser, handleLogout } = props;
 
@@ -54,19 +54,15 @@ export default function Header(props) {
     <NavBar>
       <h1>Postville</h1>
       {
-          <>
-          <Link to='/login'>Login  </Link>
-          
-            <Link to='/register'>Sign Up </Link>
-            
-        
+        <>
+          <Link to="/login">Login </Link>
+
+          <Link to="/register">Sign Up </Link>
+          <Link to="/posts">Posts</Link>
         </>
       }
-     
+
       <hr />
-      
-        
-      
-     </NavBar>
-  )
+    </NavBar>
+  );
 }

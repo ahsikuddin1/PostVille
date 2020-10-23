@@ -14,10 +14,10 @@ const SearchBar = styled.input`
   font: Helvetica, regular;
   font-size: 25px;
   color: #707070;
-  
+
   :focus {
     outline: none;
-    border: 3px solid #2EAF56;
+    border: 3px solid #2eaf56;
     border-radius: 22px;
   }
 
@@ -50,7 +50,7 @@ const Search = (props) => {
           name="Search"
           placeholder="Search"
         />
-         <SearchIcon className="fas fa-search"></SearchIcon>
+        <SearchIcon className="fas fa-search"></SearchIcon>
       </SearchContainer>
     </form>
   );

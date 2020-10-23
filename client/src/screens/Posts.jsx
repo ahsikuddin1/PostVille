@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Comments from '../screens/Comments'
+import React from "react";
+import { Link } from "react-router-dom";
+import Comments from "../screens/Comments";
 import styled from "styled-components";
 
 const ProductDetailContainer = styled.div`
@@ -15,7 +15,7 @@ const ProductDetailContainer = styled.div`
   box-shadow: 0px 3px 6px #00000029;
 
   @media (max-width: 800px) {
-    height: 494px
+    height: 494px;
   }
 
   @media (max-width: 400px) {
@@ -29,22 +29,28 @@ export default function Posts(props) {
   return (
     <div>
       <>
-          <Link to='/posts'>Posts</Link>
+        <Link to="/posts">Posts</Link>
       </>
-      {
-        posts.map(post => (
-          <ProductDetailContainer key={post.id}>
-            <p><strong>{post.user.username} </strong></p>
-            <p>{post.content}</p>
-            <Comments comments={comments}/>
-            <Link to={`/posts/${post.id}`}><p>{post.name}</p></Link>
-            <Link to={`/posts/${post.id}/edit`}><button>Edit</button></Link>
-            <button>Delete</button>
-            <button>Comment</button>
-          </ProductDetailContainer>
-        ))
-      }
-      <Link to='/posts/new'><button>Create</button></Link>
+      {posts.map((post) => (
+        <ProductDetailContainer key={post.id}>
+          <p>
+            <strong>{post.user.username} </strong>
+          </p>
+          <p>{post.content}</p>
+          <Comments comments={comments} />
+          <Link to={`/posts/${post.id}`}>
+            <p>{post.name}</p>
+          </Link>
+          <Link to={`/posts/${post.id}/edit`}>
+            <button>Edit</button>
+          </Link>
+          <button>Delete</button>
+          <button>Comment</button>
+        </ProductDetailContainer>
+      ))}
+      <Link to="/posts/new">
+        <button>Create</button>
+      </Link>
     </div>
-  )
+  );
 }

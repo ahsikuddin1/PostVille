@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation } from "react-router-dom";
 
- 
 const Logo = styled.img`
   height: 136px;
   width: 286px;
@@ -16,7 +15,7 @@ const Logo = styled.img`
     height: 60px;
     width: 120px;
   }
-`
+`;
 const Ul = styled.ul`
   display: flex;
   // grid-template-columns: 20% 20% 30% 15% 15%;
@@ -38,7 +37,7 @@ const Ul = styled.ul`
     padding: 0px 10px;
     align-items: flex-start;
   }
-`
+`;
 const Li = styled.li`
   list-style: none;
   font-size: 20px;
@@ -48,28 +47,25 @@ const Li = styled.li`
   @media (max-width: 480px) {
     padding: 5px;
   }
-`
+`;
 
-const PageFooter = styled.footer`
-`
+const PageFooter = styled.footer``;
 function ScrollToTop({ children }) {
-    const pathname = useLocation();
-   
-    useEffect(() => {
-      if (pathname !== "/") window.scrollTo(0, 0);
-    }, [pathname]);
-   
-    return children;
-  }
+  const pathname = useLocation();
 
-const Footer = () => 
+  useEffect(() => {
+    if (pathname !== "/") window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return children;
+}
+
+const Footer = () => (
   <PageFooter>
     <Ul>
-      
-      <Li>© Copyright 2020        Created by Ahsik Uddin</Li>
-      
+      <Li>© Copyright 2020 Created by Ahsik Uddin</Li>
     </Ul>
   </PageFooter>
-
+);
 
 export default Footer;

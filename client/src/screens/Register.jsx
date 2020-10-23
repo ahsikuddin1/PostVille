@@ -1,33 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export default function Register(props) {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
-    password: ""
-  })
+    password: "",
+  });
   const { username, email, password } = formData;
   const { error, handleRegister } = props;
 
-
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
-      [name]: value
-    }))
-  }
+      [name]: value,
+    }));
+  };
 
   return (
-    <form onSubmit={(e)=>{
-      e.preventDefault();
-      handleRegister(formData);
-    }}>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleRegister(formData);
+      }}
+    >
       <h3>Signup</h3>
-      {
-        error &&
-        <p>{error}</p>
-      }
+      {error && <p>{error}</p>}
       <label>
         Username:
         <input
@@ -39,12 +37,7 @@ export default function Register(props) {
       </label>
       <label>
         Email:
-        <input
-          type="text"
-          value={email}
-          name="email"
-          onChange={handleChange}
-        />
+        <input type="text" value={email} name="email" onChange={handleChange} />
       </label>
       <label>
         Password:
@@ -57,5 +50,5 @@ export default function Register(props) {
       </label>
       <button>Sign Up</button>
     </form>
-  )
+  );
 }
