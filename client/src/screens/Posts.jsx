@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import Comments from "../screens/Comments";
-import { destroyPost } from "../services/posts";
 import styled from "styled-components";
 
 const ProductDetailContainer = styled.div`
@@ -27,11 +26,7 @@ const ProductDetailContainer = styled.div`
 
 export default function Posts(props) {
   const { posts, comments, handlePostDelete } = props;
-  const { id } = useParams()
-  
-  
-
- 
+  const { id } = useParams();
 
   return (
     <div>
@@ -41,19 +36,19 @@ export default function Posts(props) {
       {posts.map((post) => (
         <ProductDetailContainer key={post.id}>
           <p>
-            <strong>{post.user.username} </strong>:
-          {post.content}</p>
-          
+            <strong>{post.user.username} </strong>:{post.content}
+          </p>
+
           <Link to={`/posts/${post.id}`}>
             <p>{post.name}</p>
           </Link>
           <Link to={`/posts/${post.id}/edit`}>
             <button>Edit</button>
           </Link>
-          <button onClick={()=>handlePostDelete(post.id)}>Delete</button>
+          <button onClick={() => handlePostDelete(post.id)}>Delete</button>
           <Comments comments={post.comments} />
-          <Link to={`/posts/${post.id}/comments/new`} >
-          <button>Comment</button>
+          <Link to={`/posts/${post.id}/comments/new`}>
+            <button>Comment</button>
           </Link>
         </ProductDetailContainer>
       ))}
