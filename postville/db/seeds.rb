@@ -12,17 +12,19 @@ Comment.destroy_all
 
 
 @user = User.create!(username: 'Ashik', email: 'admin@gmail.com', password:'123456')
+@user2 = User.create!(username: 'Moe', email: 'moe@gmail.com', password:'123456')
+@user3 = User.create!(username: 'Sandra', email: 'sandra@gmail.com', password:'123456')
 puts "#{User.count} users created"
 
 @content = 
 Post.create!(content:'Im on a journey to become a full stack dev.', user: @user)
-Post.create!(content:'Hmm.. What to order on uber eats tonight?', user: @user)
-Post.create!(content:'Every time I shoot a basketball, I yell Kobe!!!!', user: @user)
-# Post.create!(user:'Ashik', content:'Hmm, what to order on UberEats today?')
-# Post.create!(user:'Moe', content:'Great day at the bank. Opened ten business accounts!!!')
-# Post.create!(user:'Sasha', content:'Sephora has some great deals!')
+
+@content2 =
+Post.create!(content:'Hmm.. What to order on uber eats tonight?', user: @user2)
+@content3 =
+# Post.create!(content:'Every time I shoot a basketball, I yell Kobe!!!!', user: @user2)
 puts "#{Post.count} Posts created"
 
 @comment = 
-Comment.create!(content:'I have to put in a lot of hardwork!', post_id:1, user_id:1)
+Comment.create!(content:'You have to put in a lot of hardwork but you got this!', post_id:1, user_id:2)
 puts "#{Comment.count} Comments created"

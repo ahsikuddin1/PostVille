@@ -6,6 +6,7 @@ export default function PostEdit(props) {
     content: "",
   });
   const { handlePostEdit, posts } = props;
+ 
   const { id } = useParams();
 
   // Edit is almost identical to create but we prefill the formData
@@ -14,6 +15,7 @@ export default function PostEdit(props) {
       // We already have the post info that we need in our list of posts
       // we can use ".find" to select the single post from the list by its id
       const { content } = posts.find((post) => post.id === Number(id));
+      // const { commentsContent } = comments.find((comment)) => comment.id === Number(id));
       setFormData({ content });
     };
     // in react, child component will finish loading before the parents
@@ -49,6 +51,13 @@ export default function PostEdit(props) {
           value={formData.content}
           onChange={handleChange}
         />
+      </label>
+      <label>
+        New Comment:
+        <input
+        type="text"
+          name="content"
+          />
       </label>
       <button>Update</button>
     </form>

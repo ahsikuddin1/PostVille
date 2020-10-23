@@ -4,22 +4,22 @@ export const getComments = async () => {
   const response = await api.get(`/comments`);
   return response.data;
 };
-export const getOnePost = async (id) => {
+export const getOneComment = async (id) => {
   const resp = await api.get(`/comments/${id}`);
   return resp.data;
 }
 
-export const postPost = async (postData) => {
-  const resp = await api.post('/comments', {post: postData});
+export const postComment = async (commentData) => {
+  const resp = await api.post('/comments', {comment: commentData});
   return resp.data;
 }
 
-export const putPost = async (id, postData) => {
-  const resp = await api.put(`/comments/${id}`, {post: postData});
+export const putComment = async (id, commentData) => {
+  const resp = await api.put(`/comments/${id}`, {comment: commentData});
   return resp.data;
 }
 
-export const destroyPost = async (id) => {
+export const destroyComment = async (id) => {
   const resp = await api.delete(`/comments/${id}`);
   return resp;
 }

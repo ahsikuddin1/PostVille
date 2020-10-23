@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { getAllPosts, postPost, putPost } from "../services/posts";
-import { getComments } from "../services/comments.js";
+import { getAllPosts, postPost, putPost, destroyPost } from "../services/posts";
+import { getComments, postComment, putComment,  } from "../services/comments.js";
 import { Route, Switch, useHistory } from "react-router-dom";
 import Posts from "../screens/Posts";
 
@@ -34,10 +34,33 @@ export default function MainContainer() {
     );
     history.push("/posts");
   };
+  
+  // const handlePostDelete = async (id) => {
+  //   const destroy = await destroyPost(id);
+  //   setPosts(prevState => prevState.filter(post => post.id !== id)
+  //   )
+  //   history.push("/posts");
+  // }
+
   const fetchComments = async () => {
     const commentsData = await getComments();
     setComments(commentsData);
   };
+  const handleCommentCreate = async (commentData) => {
+    const newComment = await postComment(commentData);
+    setComments((prevState) => [...prevState, newComment]);
+    history.push("/comments");
+  };
+  const handleCommentEdit = async (id, commentData) => {
+    const newComment = await putComment(id, commentData);
+    setComments((prevState) =>
+      prevState.map((comment) => {
+        return comment.id === parseInt(comment) ? newComment : comment;
+      })
+    );
+    history.push("/posts");
+  };
+
   // const handlePostDelete = async (id) => {
 
   //   setPosts(prevState => prevState.filter(post => post.id !== parseInt(id))
@@ -45,10 +68,12 @@ export default function MainContainer() {
   return (
     <Switch>
       <Route path="/posts/new">
-        <PostCreate handlePostCreate={handlePostCreate} />
+        <PostCreate handlePostCreate={handlePostCreate} handleCommentCreate
+          ={handleCommentCreate}/>
       </Route>
       <Route path="/posts/:id/edit">
-        <PostEdit posts={posts} handlePostEdit={handlePostEdit} />
+        <PostEdit posts={posts} handlePostEdit={handlePostEdit} 
+          comments={comments} handleCommentEdit={handleCommentEdit} />
       </Route>
       <Route path="/posts">
         <Posts posts={posts} comments={comments} />
