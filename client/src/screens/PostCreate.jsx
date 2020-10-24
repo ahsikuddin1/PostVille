@@ -13,11 +13,13 @@ const Form = styled.form`
     margin: 20px auto;
   }
 `;
-const LabelTextArea = styled.label`
+const LabelContainer = styled.label`
   color: #707070;
   font-size: 28px;
-  align-self: flex-start;
-  margin-top: 25px;
+
+  @media (max-width: 400px) {
+    align-self: flex-start;
+  }
 `;
 
 const TextArea = styled.textarea`
@@ -26,20 +28,20 @@ const TextArea = styled.textarea`
   justify-self: flex-end;
   margin: 10px;
   padding: 10px;
-  font-family: regular, Helvetica;
+  font-family: regular, Varela Round;
   font-size: 25px;
-  color: #707070;
+  height: 120px;
 
   :focus {
     outline: none;
-    border: 3px solid #2eaf56;
+    border: 3px solid ;
     border-radius: 22px;
   }
+  
   @media (max-width: 400px) {
     width: 70vw;
   }
 `;
-
 export default function PostCreate(props) {
   const [formData, setFormData] = useState({
     content: ''
@@ -56,13 +58,14 @@ export default function PostCreate(props) {
       e.preventDefault();
       handlePostCreate(formData);
     }}>
-      <h3>Create Post</h3>
+      <LabelContainer>Create Post :</LabelContainer>
       <label>
-        Post:
-        <input
-          type="text"
+       <TextArea
+          rows={10}
+          columns={20}
           name='content'
           value={formData.content}
+          required
           onChange={handleChange}
         />
       </label>
