@@ -1,9 +1,29 @@
-import React from "react";
-import { Link } from "react-router-dom"
-
+import React, { useEffect } from "react";
+import { Link, useHistory } from "react-router-dom"
+import styled from "styled-components"
+const Button = styled.button`
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  padding: 10px 15px 10px 15px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #a8c6fa;
+  cursor: pointer;
+  font-size; 20px;
+  margin-bottom: 5px;
+`;
 
 export default function Comments(props) {
-  const { comments } = props;
+  const { comments, handleCommentDelete, setIsCommentDeleted, isCommentDeleted } = props;
+  const history = useHistory()
+  console.log(props)
+  
+  const handleSubmit = async (e) => {
+    await handleCommentDelete(e)
+    setIsCommentDeleted(!isCommentDeleted)
+  }
+
   return (
     <div>
       <h3>Comments</h3>
@@ -12,9 +32,9 @@ export default function Comments(props) {
           <div key={comment.id}>
             <p> {comment.user.username}: {comment.content}</p>
             <Link to={`/comments/${comment.id}/edit`}>
-              <button>Edit Comment</button>
+              <Button>Edit Comment</Button>
             </Link>
-            <button>Delete Comment</button>
+            <Button onClick={(e) => handleSubmit(`${comment.id}`)}>Delete Comment</Button>
           </div>
         );
       })}

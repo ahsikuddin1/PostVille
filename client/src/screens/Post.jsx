@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Comments from "../screens/Comments";
 import styled from "styled-components";
@@ -84,14 +84,36 @@ const StyledCommentOptns = styled.div`
 `;
 
 export default function Post(props) {
-  const { post, comments, handlePostDelete } = props;
+  console.log(props);
+  const {
+    post,
+    handlePostDelete,
+    handleCommentCreate,
+    handleCommentDelete,
+    setIsCommentDeleted,
+    isCommentDeleted,
+    fetchComments,
+  } = props;
   const { id } = useParams();
   const [showCreateComment, toggleCreateComment] = useState(false);
   const [showComments, toggleComments] = useState(false);
+  const [formData, setFormData] = useState({
+    content: "",
+  });
+  useEffect(() => {
+    const Comments = async () => {
+      const newComments = await fetchComments();
+    };
+    fetchComments();
+  }, [isCommentDeleted]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ [name]: value });
+  };
 
   return (
     <PostContainer>
-      
       <StyledPost key={post.id}>
         <p>
           <strong>{post.user.username}</strong>:
@@ -103,7 +125,7 @@ export default function Post(props) {
         </Link>
 
         <StyledCommentOptns>
-          <SubmitButton onClick={() => toggleCreateComment(!showCreateComment)}>
+          <SubmitButton onClick={() => toggleCreateComment(true)}>
             Post Comment
           </SubmitButton>
           <SubmitButton onClick={() => toggleComments(!showComments)}>
@@ -112,14 +134,32 @@ export default function Post(props) {
         </StyledCommentOptns>
 
         {showCreateComment && (
-          <div>
-            <StyledTextArea placeholder="Add a comment..."></StyledTextArea>
-            <Link to={`/posts/${post.id}/comments/new`}>
-              <SubmitButton>Comment</SubmitButton>
-            </Link>
-          </div>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleCommentCreate(post.id, formData);
+
+              toggleCreateComment(false);
+              toggleComments(true);
+            }}
+          >
+            <StyledTextArea
+              placeholder="Add a comment..."
+              name="content"
+              value={formData.content}
+              onChange={handleChange}
+            ></StyledTextArea>
+            <SubmitButton>Comment</SubmitButton>
+          </form>
         )}
-        {showComments && <Comments comments={post.comments} />}
+        {showComments && (
+          <Comments
+            comments={post.comments}
+            handleCommentDelete={handleCommentDelete}
+            setIsCommentDeleted={setIsCommentDeleted}
+            isCommentDeleted={isCommentDeleted}
+          />
+        )}
       </StyledPost>
       <StyledCRUDOpts>
         <SVGButton onClick={() => handlePostDelete(post.id)}>
@@ -153,7 +193,7 @@ export default function Post(props) {
         <Link to={`/posts/${post.id}/edit`}>
           <SVGButton>
             <svg version="1.1" viewBox="0 0 128 128">
-              <circle class="st0" cx="64" cy="64" r="64" />
+              <circle className="st0" cx="64" cy="64" r="64" />
               <g>
                 <path
                   class="st1"
