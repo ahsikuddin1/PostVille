@@ -91,7 +91,6 @@ export default function Login(props) {
         <Link to="/register">
           <SubmitButton>Sign Up!</SubmitButton>
         </Link>
-        {/* <Link to="/posts">Posts</Link> */}
       </StyledForm>
     </MainContainer>
   );

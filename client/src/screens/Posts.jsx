@@ -26,9 +26,7 @@ export default function Posts(props) {
   const { posts, handleCommentDelete, setIsCommentDeleted, isCommentDeleted, fetchComments } = props;
   return (
     <MainContainer>
-      {/* <Link to="/posts"> */}
       <h3>Posts</h3>
-      {/* </Link> */}
       <Link to="/posts/new">
         <SubmitButton>Create a Post</SubmitButton>
       </Link>
