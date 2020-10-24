@@ -18,10 +18,8 @@ const Logo = styled.img`
 `;
 const Ul = styled.ul`
   display: flex;
-  // grid-template-columns: 20% 20% 30% 15% 15%;
   justify-content: space-between;
   align-items: center;
-  // background: ;
   border: 1px solid #707070;
   color: black;
   padding: 0px 100px;
