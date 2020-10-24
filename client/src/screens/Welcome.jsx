@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Banner = styled.div`
@@ -6,6 +7,7 @@ const Banner = styled.div`
   height: inherit;
   flex: 1;
   background-image: url("https://images.unsplash.com/photo-1539035104074-dee66086b5e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjI0MX0&auto=format&fit=crop&w=2550&q=80");
+//  background-image:  url("https://images.unsplash.com/photo-1546074177-ce5a4fe7356a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2767&q=80)
   background-size: cover;
   padding: 10px 0 10px 0;
   color: white;
@@ -38,8 +40,12 @@ const Welcome = () => (
     <Content>
       <h1>Welcome to Postville!</h1>
       <h2>A mix of Twitter/Reddit for your blogging needs.</h2>
-      <SubmitButton>Log In</SubmitButton>
-      <SubmitButton>Sign Up</SubmitButton>
+      <Link to="/login">
+        <SubmitButton>Log In</SubmitButton>
+      </Link>
+      <Link to="/signup">
+        <SubmitButton>Sign Up</SubmitButton>
+        </Link>
     </Content>
   </Banner>
 );

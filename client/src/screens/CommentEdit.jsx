@@ -44,7 +44,7 @@ export default function CommentEdit(props) {
         <strong>Edit Comment</strong>
       </h3>
       <label>
-        New Comment:
+        Updated Comment:
         <input
           type="text"
           name="content"
