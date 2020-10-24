@@ -63,7 +63,6 @@ export default function Header(props) {
       <NavOptionContainers>
         <Link to="/login"><NavOptions>Log in</NavOptions></Link>
         <Link to="/register"><NavOptions>Sign Up</NavOptions></Link>
-        {/* <Link to="/posts"><NavOptions>Posts</NavOptions></Link> */}
       </NavOptionContainers>
     </NavBar>
   );
