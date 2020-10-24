@@ -1,5 +1,5 @@
 import axios from 'axios';
-const baseUrl = process.env.NODE_ENV === 'production' ? 'http://git.heroku.com/posteville-api.git' : 'http://localhost:3000' 
+const baseUrl = process.env.NODE_ENV === 'production' ? 'https://git.heroku.com/posteville-api.git' : 'http://localhost:3000' 
 
 const api = axios.create({
   baseURL: baseUrl

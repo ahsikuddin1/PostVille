@@ -21,7 +21,6 @@ function App() {
   }, [])
 
   const handleLogin = async (loginData) => {
-    console.log(loginData)
     const userData = await loginUser(loginData);
     setCurrentUser(userData);
     history.push('/posts')
