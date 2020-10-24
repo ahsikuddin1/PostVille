@@ -2,22 +2,31 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+const H1 = styled.h1`
+  margin: 0 0 0 10px;
+  padding: 0;
+`
+
 const NavBar = styled.nav`
   display: flex;
-  // background: blue;
+  align-items: center;
+  justify-content: space-between;
   border: 1px solid #707070;
   color: black;
   font-size: 22px;
+  min-height: 80px;
 
-  @media (max-width: 480px) {
-    display: flex;
-    flex-direction: column;
+  a,
+  a:visited,
+  a:hover {
+    text-decoration: none;
+    color: inherit;
   }
 `;
 const NavOptionContainers = styled.div`
   display: flex;
   align-items: center;
-  // flex-grow: 1;
+  height: 100%;
 
   @media (max-width: 800px) {
     margin: 0px 5px;
@@ -29,22 +38,18 @@ const NavOptionContainers = styled.div`
   }
 `;
 const NavOptions = styled.p`
-  font-size: 24px;
-  margin: 0px px;
   text-decoration: none;
   color: black;
   font-weight: 600;
+  padding: 10px 15px 10px 15px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #A8C6FA;
+  margin: 10px;
+  cursor: pointer;
 
-  @media (max-width: 1260px) {
-    margin: 0px 20px;
-  }
-
-  @media (max-width: 800px) {
-    margin: 0px 10px;
-  }
-
-  @media (max-width: 480px) {
-    margin: 10px;
+  a:hover {
+    text-decoration: underline;
   }
 `;
 export default function Header(props) {
@@ -52,17 +57,14 @@ export default function Header(props) {
 
   return (
     <NavBar>
-      <h1>Postville</h1>
-      {
-        <>
-          <Link to="/login">Login </Link>
-
-          <Link to="/register">Sign Up </Link>
-          <Link to="/posts">Posts</Link>
-        </>
-      }
-
-      <hr />
+      <Link to="/">
+        <H1>Postville</H1>
+      </Link>
+      <NavOptionContainers>
+        <Link to="/login"><NavOptions>Log in</NavOptions></Link>
+        <Link to="/register"><NavOptions>Sign Up</NavOptions></Link>
+        <Link to="/posts"><NavOptions>Posts</NavOptions></Link>
+      </NavOptionContainers>
     </NavBar>
   );
 }
