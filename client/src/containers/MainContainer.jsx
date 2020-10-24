@@ -69,9 +69,16 @@ export default function MainContainer() {
     );
     history.push("/posts");
   };
-  const handleCommentDelete = async (id) => {
-    const destroy = await destroyComment(id);
-    setPosts((prevState) => prevState.filter((post) => post.id !== id));
+  const handleCommentDelete = async (comment) => {
+   await destroyComment(comment.id);
+    setPosts((prevState) => prevState.map((post) => {
+      return post.id === comment.post_id ? {
+        ...post,
+        comments: post.comments.filter((cnmt) => {
+          return cnmt.id !== comment.id 
+        })
+      }: post
+    }))
     // setIsDeleted(!isDeleted) 
     // // history.push("/posts");
   };

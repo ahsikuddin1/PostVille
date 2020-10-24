@@ -23,18 +23,32 @@ const SubmitButton = styled.button`
 `;
 
 export default function Posts(props) {
-  const { posts, handleLogout, handleCommentDelete, setIsCommentDeleted, isCommentDeleted, fetchComments } = props;
+  const {
+    posts,
+    handleLogout,
+    handleCommentDelete,
+    setIsCommentDeleted,
+    isCommentDeleted,
+    fetchComments,
+  } = props;
   return (
     <MainContainer>
       <h3>Posts</h3>
       <Link to="/posts/new">
         <SubmitButton>Create a Post</SubmitButton>
       </Link>
-      <Link to ="/">
+      <Link to="/">
         <SubmitButton onClick={handleLogout}>Logout</SubmitButton>
-        </Link>
+      </Link>
       {posts.map((post) => (
-        <Post post={post} {...props} handleCommentDelete={handleCommentDelete} setIsCommentDeleted={setIsCommentDeleted} isCommentDeleted={isCommentDeleted} fetchComments={fetchComments}/>
+        <Post
+          post={post}
+          {...props}
+          handleCommentDelete={handleCommentDelete}
+          setIsCommentDeleted={setIsCommentDeleted}
+          isCommentDeleted={isCommentDeleted}
+          fetchComments={fetchComments}
+        />
       ))}
     </MainContainer>
   );

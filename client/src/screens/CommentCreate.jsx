@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 
@@ -15,36 +15,37 @@ const Form = styled.form`
   }
 `;
 
-
 export default function CommentCreate(props) {
   const [formData, setFormData] = useState({
-    content: ''
-  })
+    content: "",
+  });
 
-  const {id} = useParams()
+  const { id } = useParams();
   const { handleCommentCreate } = props;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ [name]: value })
-  }
+    setFormData({ [name]: value });
+  };
 
   return (
-    <Form onSubmit={(e) => {
-      e.preventDefault();
-      handleCommentCreate(id, formData);
-    }}>
+    <Form
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleCommentCreate(id, formData);
+      }}
+    >
       <h3>Create Comment</h3>
       <label>
         Comment:
         <input
           type="text"
-          name='content'
+          name="content"
           value={formData.content}
           onChange={handleChange}
         />
       </label>
       <button>Create</button>
     </Form>
-  )
+  );
 }

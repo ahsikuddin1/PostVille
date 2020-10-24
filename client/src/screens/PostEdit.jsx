@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import styled from "styled-components"
+import styled from "styled-components";
 
 const LabelContainer = styled.label`
   color: #707070;
@@ -23,10 +23,10 @@ const TextArea = styled.textarea`
 
   :focus {
     outline: none;
-    border: 3px solid ;
+    border: 3px solid;
     border-radius: 22px;
   }
-  
+
   @media (max-width: 400px) {
     width: 70vw;
   }
@@ -48,7 +48,7 @@ export default function PostEdit(props) {
     content: "",
   });
   const { handlePostEdit, posts } = props;
- 
+
   const { id } = useParams();
 
   // Edit is almost identical to create but we prefill the formData
@@ -100,7 +100,7 @@ export default function PostEdit(props) {
       <Button>Update</Button>
       <Link to="/posts">
         <Button>Back</Button>
-        </Link>
+      </Link>
     </form>
   );
 }

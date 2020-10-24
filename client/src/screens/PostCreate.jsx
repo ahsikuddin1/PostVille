@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Form = styled.form`
@@ -34,36 +34,38 @@ const TextArea = styled.textarea`
 
   :focus {
     outline: none;
-    border: 3px solid ;
+    border: 3px solid;
     border-radius: 22px;
   }
-  
+
   @media (max-width: 400px) {
     width: 70vw;
   }
 `;
 export default function PostCreate(props) {
   const [formData, setFormData] = useState({
-    content: ''
-  })
+    content: "",
+  });
   const { handlePostCreate } = props;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ [name]: value })
-  }
+    setFormData({ [name]: value });
+  };
 
   return (
-    <Form onSubmit={(e) => {
-      e.preventDefault();
-      handlePostCreate(formData);
-    }}>
+    <Form
+      onSubmit={(e) => {
+        e.preventDefault();
+        handlePostCreate(formData);
+      }}
+    >
       <LabelContainer>Create Post :</LabelContainer>
       <label>
-       <TextArea
+        <TextArea
           rows={10}
           columns={20}
-          name='content'
+          name="content"
           value={formData.content}
           required
           onChange={handleChange}
@@ -71,5 +73,5 @@ export default function PostCreate(props) {
       </label>
       <button>Create</button>
     </Form>
-  )
+  );
 }

@@ -53,13 +53,21 @@ const NavOptions = styled.p`
   }
 `;
 export default function Header(props) {
-  const { currentUser, handleLogout } = props;
+  const { currentUser } = props;
 
   return (
     <NavBar>
       <Link to="/">
         <H1>Postville</H1>
       </Link>
+      {/* {
+        currentUser ?
+          <>
+            <p>{currentUser.username}</p>
+          </>
+          :
+      } */}
+      
       <NavOptionContainers>
         <Link to="/login"><NavOptions>Log in</NavOptions></Link>
         <Link to="/register"><NavOptions>Sign Up</NavOptions></Link>

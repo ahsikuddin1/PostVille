@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { Link, useHistory } from "react-router-dom"
-import styled from "styled-components"
+import { Link, useHistory } from "react-router-dom";
+import styled from "styled-components";
 const Button = styled.button`
   text-decoration: none;
   color: black;
@@ -15,14 +15,16 @@ const Button = styled.button`
 `;
 
 export default function Comments(props) {
-  const { comments, handleCommentDelete, setIsCommentDeleted, isCommentDeleted } = props;
-  const history = useHistory()
-  console.log(props)
+  const {
+    comments,
+    handleCommentDelete,
+    setIsCommentDeleted,
+    isCommentDeleted,
+  } = props;
+  const history = useHistory();
+  console.log(props);
+
   
-  const handleSubmit = async (e) => {
-    await handleCommentDelete(e)
-    setIsCommentDeleted(!isCommentDeleted)
-  }
 
   return (
     <div>
@@ -30,11 +32,16 @@ export default function Comments(props) {
       {comments.map((comment) => {
         return (
           <div key={comment.id}>
-            <p> {comment.user.username}: {comment.content}</p>
+            <p>
+              {" "}
+              {comment.user.username}: {comment.content}
+            </p>
             <Link to={`/comments/${comment.id}/edit`}>
               <Button>Edit Comment</Button>
             </Link>
-            <Button onClick={(e) => handleSubmit(`${comment.id}`)}>Delete Comment</Button>
+            <Button onClick={() => handleCommentDelete(comment)}>
+              Delete Comment
+            </Button>
           </div>
         );
       })}
