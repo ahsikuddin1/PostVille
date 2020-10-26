@@ -1,5 +1,17 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+
+const MainContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-self: flext start;
+`;
+
+const DetailContainer = styled.div`
+  display: flex;
+  margin: 50px auto;
+`;
 
 const Form = styled.form`
   display: grid;
@@ -42,6 +54,18 @@ const TextArea = styled.textarea`
     width: 70vw;
   }
 `;
+const Button = styled.button`
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  padding: 10px 15px 10px 15px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #a8c6fa;
+  cursor: pointer;
+  font-size; 20px;
+  margin-bottom: 5px;
+`;
 export default function PostCreate(props) {
   const [formData, setFormData] = useState({
     content: "",
@@ -54,24 +78,31 @@ export default function PostCreate(props) {
   };
 
   return (
-    <Form
-      onSubmit={(e) => {
-        e.preventDefault();
-        handlePostCreate(formData);
-      }}
-    >
-      <LabelContainer>Create Post :</LabelContainer>
-      <label>
-        <TextArea
-          rows={10}
-          columns={20}
-          name="content"
-          value={formData.content}
-          required
-          onChange={handleChange}
-        />
-      </label>
-      <button>Create</button>
-    </Form>
+    <MainContainer>
+      <DetailContainer>
+        <Form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handlePostCreate(formData);
+          }}
+        >
+          <LabelContainer>Create Post :</LabelContainer>
+          <label>
+            <TextArea
+              rows={10}
+              columns={20}
+              name="content"
+              value={formData.content}
+              required
+              onChange={handleChange}
+            />
+          </label>
+          <Button>Create</Button>
+          <Link to="/posts">
+            <Button>Back</Button>
+          </Link>
+        </Form>
+      </DetailContainer>
+    </MainContainer>
   );
 }

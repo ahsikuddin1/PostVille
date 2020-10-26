@@ -22,9 +22,7 @@ export default function Comments(props) {
     isCommentDeleted,
   } = props;
   const history = useHistory();
-  console.log(props);
 
-  
 
   return (
     <div>

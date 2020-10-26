@@ -79,8 +79,6 @@ export default function MainContainer() {
         })
       }: post
     }))
-    // setIsDeleted(!isDeleted) 
-    // // history.push("/posts");
   };
   
   return (

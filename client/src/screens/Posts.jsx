@@ -39,7 +39,7 @@ export default function Posts(props) {
       </Link>
       <Link to="/">
         <SubmitButton onClick={handleLogout}>Logout</SubmitButton>
-      </Link>
+       </Link> 
       {posts.map((post) => (
         <Post
           post={post}

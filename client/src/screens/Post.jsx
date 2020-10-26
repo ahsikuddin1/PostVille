@@ -84,7 +84,6 @@ const StyledCommentOptns = styled.div`
 `;
 
 export default function Post(props) {
-  console.log(props);
   const {
     post,
     handlePostDelete,

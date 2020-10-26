@@ -16,6 +16,7 @@ Comment.destroy_all
 @user3 = User.create!(username: 'Sandra', email: 'sandra@gmail.com', password:'123456')
 @user4 = User.create!(username: 'Rimon', email: 'rimon@gmail.com', password:'123456')
 
+
 puts "#{User.count} users created"
 
 @content = 
